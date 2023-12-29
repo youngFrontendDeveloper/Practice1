@@ -1,0 +1,251 @@
+@use "../../styles/variables" as variable;
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__item-wrap {
+  width: 100%;
+
+  @media screen and (min-width: variable.$width-md) {
+    max-width: 320px;
+  }
+  @media screen and (min-width: variable.$width-lg) {
+    max-width: 362px;
+  }
+}
+
+.form__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  border: 1px solid variable.$border-color;
+  border-radius: 3px;
+
+  @media screen and (min-width: variable.$width-md) {
+    margin-bottom: 32px;
+  }
+}
+
+.form__item--relative {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+}
+
+.form__item--relative:has(.form_select)::after {
+  background-image: url("/icons/select-dropdown-icon.svg");
+}
+
+.form__item--relative:has(.globe)::after {
+  background-image: url("/icons/globe-icon.svg");
+}
+
+.form__item--relative:has(.globe)::after {
+  background-image: url("/icons/globe-icon.svg");
+}
+
+.form__item--relative:has(.vk)::after {
+  background-image: url("/icons/vk-icon.svg");
+}
+
+.form__item--relative:has(.classmates)::after {
+  background-image: url("/icons/classmates-icon.svg");
+}
+
+.form__item--relative:has(.facebook)::after {
+  background-image: url("/icons/facebook-icon.svg");
+}
+
+.form__item--relative:has(.instagram)::after {
+  background-image: url("/icons/instagram-icon.svg");
+}
+
+.form__item--relative:has(.youtube)::after {
+  background-image: url("/icons/youtube-icon.svg");
+}
+
+.form__item--file {
+  position: relative;
+  width: 175px;
+  height: max-content;
+  order: -1;
+  margin-bottom: 15px;
+  padding: 0;
+  border: none;
+
+  &::before {
+    position: absolute;
+    top: 46px;
+    right: 6px;
+    content: "";
+    display: block;
+    width: 36px;
+    height: 36px;
+    background-image: url("/icons/close-icon.svg");
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: variable.$width-md) {
+    margin-left: auto;
+    order: 0;
+  }
+}
+
+.form__libel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: variable.$label-color;
+  font-size: 12px;
+  line-height: 16px;
+
+  &--thick {
+    font-weight: bold;
+  }
+
+  &--required::before {
+    content: "*";
+    width: 10px;
+    height: 7px;
+    color: variable.$red-color;
+    font-size: 20px;
+  }
+}
+
+.form__libel-file {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form_input,
+.form_select {
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  outline: transparent;
+}
+
+.form_input::placeholder {
+  color: variable.$placeholder-color;
+  font-family: var(--secondary-text-font);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.form_input.warning::placeholder {
+  color: variable.$red-color;
+}
+
+.form_select {
+  position: relative;
+  z-index: 2;
+  background-color: transparent;
+  appearance: none;
+}
+
+.form_input-file {
+  display: none;
+}
+
+.form__avatar-wrap {
+  position: relative;
+  width: 163px;
+  height: 163px;
+  margin-top: 13px;
+  border-radius: 163.333px;
+  overflow: hidden;
+}
+
+.form__avatar-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.form__avatar-shading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 163px;
+  height: 163px;
+  border-radius: 163px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+}
+
+.form__avatar-text {
+  position: relative;
+  justify-content: center;
+  margin-top: 76px;
+  color: variable.$white-color;
+  text-align: center;
+  font-family: var(--primary-text-font);
+  font-size: 18.667px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration-line: underline;
+
+  &::before {
+    position: absolute;
+    top: -36px;
+    left: 65px;
+    content: "";
+    display: block;
+    width: 29px;
+    height: 29px;
+    background-image: url("/icons/select-file-icon.svg")
+  }
+}
+
+.form__error {
+  margin-top: -14px;
+  margin-bottom: 10px;
+
+  &--margin {
+    margin-top: 5px;
+  }
+
+  @media screen and (min-width: variable.$width-md) {
+    margin-top: -30px;
+
+    &--margin {
+      margin-top: 5px;
+    }
+  }
+}
+
+.form__success {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form__btn {
+  margin-top: 10px;
+
+  @media screen and (min-width: variable.$width-md) {
+    margin-top: 18px;
+  }
+}

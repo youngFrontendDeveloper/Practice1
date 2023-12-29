@@ -1,0 +1,16 @@
+.home {
+  height: 90vh;
+  padding: 120px 20px;
+}
+
+.home__title {
+  margin-bottom: 70px;
+  text-align: center;
+  font-family: var(--title-font);
+}
+
+.home__btn {
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+}

@@ -1,0 +1,44 @@
+@use "../../styles/variables" as variable;
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1500px;
+  display: flex;
+  justify-content: center;
+  background-color: variable.$modal-overlay-bg-color;
+  z-index: 30;
+}
+
+.modal {
+  position: relative;
+  top: 50px;
+  width: 90%;
+  max-width: 754px;
+  height: max-content;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: variable.$white-color;
+
+  @media screen and (min-width: variable.$width-md) {
+    top: 100px;
+    padding: 53px 100px;
+  }
+}
+
+.modal__title {
+  margin-bottom: 35px;
+  color: inherit;
+  font-family: var(--title-font);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 34px;
+
+  @media screen and (min-width: variable.$width-lg) {
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
